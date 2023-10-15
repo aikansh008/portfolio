@@ -6,21 +6,18 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 84, 11, 89)),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 84, 11, 89)),
         useMaterial3: true,
       ),
-      home: const MyHomePage( 
-        title: 'MY PORTFOLIO', 
+      home: const MyHomePage(
+        title: 'MY PORTFOLIO',
       ),
-     
       debugShowCheckedModeBanner: false,
     );
   }
@@ -29,7 +26,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
- 
   final String title;
 
   @override
@@ -41,7 +37,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      
       _counter++;
     });
   }
@@ -57,15 +52,62 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         backgroundColor: Color.fromARGB(134, 175, 50, 194),
         appBar: AppBar(
-          // TRY THIS: Try changing the color here to a specific color (to
-          // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-          // change color while the other colors stay the same.
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          // Here we take the value from the MyHomePage object that was created by
-          // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
           centerTitle: true,
           titleSpacing: 3,
+        ),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 208, 150, 206),
+                ),
+                child: Text('AIKANSH'),
+              ),
+              ListTile(
+                title: const Text(
+                  'HOME',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                onTap: () {},
+              ),
+              ListTile(
+                title: const Text(
+                  'ABOUT',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                onTap: () {},
+              ),
+              ListTile(
+                title: const Text(
+                  'SKILLS',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                onTap: () {},
+              ),
+              ListTile(
+                title: const Text(
+                  'CONTACT',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                onTap: () {},
+              ),
+              ListTile(
+                title: const Text(''),
+                onTap: () {},
+              ),
+            ],
+          ),
         ),
         body: Container(
           width: 1500,
@@ -75,27 +117,28 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only( top : 8.0),
+                    padding: const EdgeInsets.only(top: 8.0),
                     child: CircleAvatar(
                       radius: 100,
-                      backgroundImage: AssetImage('assets/Images/IMG-20230624-WA0000.jpg'),
+                      backgroundImage:
+                          AssetImage('assets/Images/IMG-20230624-WA0000.jpg'),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only( top:8.0),
+                    padding: const EdgeInsets.only(top: 8.0),
                     child: Text(
                       " This Is AIKANSH TIWARI",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 27,
                         fontWeight: FontWeight.w800,
-                        color:Color.fromARGB(255, 81, 215, 197),
+                        color: Color.fromARGB(255, 81, 215, 197),
                         letterSpacing: 2.0,
                       ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top:15.0),
+                    padding: const EdgeInsets.only(top: 15.0),
                     child: Text(
                       'About Me',
                       textAlign: TextAlign.center,
@@ -113,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Text(
                         "Hi,I'm Aikansh Tiwari,an app developer passionate about crafting remarkable digital experiences.I'm also intrested in backend development and love tackling challenges.Plus,I'm a DSA enthusiast and a competitive programmer,always aiming for excellence.Let's innovate together!",
                         style: TextStyle(
-                          fontFamily:'fontmain',
+                          fontFamily: 'fontmain',
                           fontSize: 25,
                           fontWeight: FontWeight.w500,
                           color: Colors.white,
@@ -123,7 +166,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only( top :20.0,),
+                    padding: const EdgeInsets.only(
+                      top: 20.0,
+                    ),
                     child: Text(
                       "Skills",
                       style: TextStyle(
@@ -262,75 +307,76 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Card(
                     elevation: 50,
-                    shadowColor:Color.fromARGB(255, 126, 223, 47),
+                    shadowColor: Color.fromARGB(255, 126, 223, 47),
                     color: Color.fromARGB(255, 197, 179, 179),
                     margin: EdgeInsets.symmetric(
                       vertical: 10.0,
                       horizontal: 25.0,
-                      
-                      
                     ),
-                    
                     child: ListTile(
                       leading: Icon(
                         Icons.email,
                         color: Colors.black,
                       ),
-                      title: Text("aikanshtiwari007@gmail.com",style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      title: Text(
+                        "aikanshtiwari007@gmail.com",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
-                   Card(
+                  Card(
                     color: Color.fromARGB(255, 197, 179, 179),
                     margin: EdgeInsets.symmetric(
                       vertical: 10.0,
                       horizontal: 25.0,
-                      
                     ),
-                    
                     child: ListTile(
-                      leading:Image.asset("assets/Images/icons8-phone-50.png"),
-                       title: Text("+91 6387175488",style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      leading: Image.asset("assets/Images/icons8-phone-50.png"),
+                      title: Text(
+                        "+91 6387175488",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
-                   Card(
+                  Card(
                     color: Color.fromARGB(255, 197, 179, 179),
                     margin: EdgeInsets.symmetric(
                       vertical: 10.0,
                       horizontal: 25.0,
-                      
                     ),
-                    
                     child: ListTile(
-                      leading: Image.asset("assets/Images/icons8-linkedin-48.png"),
-                       title: Text("Aikansh Tiwari",style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      leading:
+                          Image.asset("assets/Images/icons8-linkedin-48.png"),
+                      title: Text(
+                        "Aikansh Tiwari",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
-                   Card(
+                  Card(
                     color: Color.fromARGB(255, 197, 179, 179),
                     margin: EdgeInsets.symmetric(
                       vertical: 10.0,
                       horizontal: 25.0,
-                      
                     ),
-                    
                     child: ListTile(
-                      leading: Image.asset("assets/Images/icons8-instagram-50.png"),
-                       title: Text("aikansh_tiwari13",style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      leading:
+                          Image.asset("assets/Images/icons8-instagram-50.png"),
+                      title: Text(
+                        "aikansh_tiwari13",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),

@@ -1,4 +1,7 @@
+import 'package:aikanshportfolio/aboutme.dart';
 import 'package:flutter/material.dart';
+import'skills.dart';
+import 'connection.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme:
-            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 84, 11, 89)),
+            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 141, 214, 222)),
         useMaterial3: true,
       ),
       home: const MyHomePage(
@@ -58,59 +61,93 @@ class _MyHomePageState extends State<MyHomePage> {
           titleSpacing: 3,
         ),
         drawer: Drawer(
-          child: ListView(
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 208, 150, 206),
-                ),
-                child: Text('AIKANSH'),
-              ),
-              ListTile(
-                title: const Text(
-                  'HOME',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w800,
+          child: Container(
+            color: Color.fromARGB(255, 211, 114, 210),
+            child: ListView(
+              children: [
+                const DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 102, 136, 210),
                   ),
+                  child:
+                 Column(
+                   children: [
+                     Text("Aikansh Tiwari",textAlign:TextAlign.center,style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w700,
+                     ),),
+                     Text("aikanshtiwari007@gmail.com",textAlign: TextAlign.center,style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                     ),),
+                   ],
+                 ),
+                 
                 ),
-                onTap: () {},
-              ),
-              ListTile(
-                title: const Text(
-                  'ABOUT',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w800,
+                ListTile(
+                  title: const Text(
+                    'HOME',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
+                  onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()));
+           
+                  },
                 ),
-                onTap: () {},
-              ),
-              ListTile(
-                title: const Text(
-                  'SKILLS',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w800,
+                
+                ListTile(
+                  title: const Text(
+                    'SKILLS',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MySkills()));
+                  },
                 ),
-                onTap: () {},
-              ),
-              ListTile(
-                title: const Text(
-                  'CONTACT',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w800,
+                ListTile(
+                  title: const Text(
+                    'MORE ABOUT ME',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
+                  onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => AboutMe()));
+          
+                  },
                 ),
-                onTap: () {},
-              ),
-              ListTile(
-                title: const Text(''),
-                onTap: () {},
-              ),
-            ],
+                ListTile(
+                  title: const Text(
+                    'CONTACT',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  onTap: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => MyConnections()));
+          
+                  },
+                ),
+                ListTile(
+                  title: const Text(''),
+                  onTap: () {},
+                ),
+              ],
+            ),
           ),
         ),
         body: Container(
           width: 1500,
+          decoration: BoxDecoration(
+                gradient: LinearGradient(
+              colors: [Colors.lightBlueAccent, Color.fromARGB(255, 8, 31, 96)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            )),
           child: SingleChildScrollView(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -132,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(
                         fontSize: 27,
                         fontWeight: FontWeight.w800,
-                        color: Color.fromARGB(255, 81, 215, 197),
+                        color: Color.fromARGB(255, 5, 23, 105),
                         letterSpacing: 2.0,
                       ),
                     ),
@@ -144,7 +181,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 30,
-                        color: Color.fromARGB(222, 50, 203, 15),
+                        color: Color.fromARGB(222, 202, 100, 10),
                         fontWeight: FontWeight.w700,
                         letterSpacing: 2.0,
                       ),
@@ -165,221 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 20.0,
-                    ),
-                    child: Text(
-                      "Skills",
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.w800,
-                        color: Color.fromARGB(255, 214, 141, 81),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 40.0, left: 10.0),
-                        child: Image.asset(
-                          "assets/Images/c.png",
-                          height: 100,
-                          width: 100,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20.0, top: 40.0),
-                        child: Text(
-                          "C language",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 30,
-                            color: Color.fromARGB(255, 51, 182, 215),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16.0, top: 40.0),
-                        child: Image.asset(
-                          "assets/Images/ISO_C++_Logo.svg.png",
-                          height: 100,
-                          width: 100,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16.0, top: 40.0),
-                        child: Text(
-                          "C++",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 30,
-                            color: Color.fromARGB(255, 51, 182, 215),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16.0, top: 40.0),
-                        child: Image.asset(
-                          "assets/Images/html-5.png",
-                          height: 100,
-                          width: 100,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16.0, top: 40.0),
-                        child: Text(
-                          "HTML",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 30,
-                            color: Color.fromARGB(255, 51, 182, 215),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16.0, top: 40.0),
-                        child: Image.asset(
-                          "assets/Images/css-3.png",
-                          height: 100,
-                          width: 100,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16.0, top: 40.0),
-                        child: Text(
-                          "CSS",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 30,
-                            color: Color.fromARGB(255, 51, 182, 215),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16.0, top: 40.0),
-                        child: Image.asset(
-                          "assets/Images/icons8-flutter-96.png",
-                          height: 100,
-                          width: 100,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16.0, top: 40.0),
-                        child: Text(
-                          "FLUTTER",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 30,
-                            color: Color.fromARGB(255, 51, 182, 215),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 40.0, bottom: 20),
-                    child: Text(
-                      "Connect With Me",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w700,
-                        color: Color.fromARGB(255, 206, 177, 47),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    elevation: 50,
-                    shadowColor: Color.fromARGB(255, 126, 223, 47),
-                    color: Color.fromARGB(255, 197, 179, 179),
-                    margin: EdgeInsets.symmetric(
-                      vertical: 10.0,
-                      horizontal: 25.0,
-                    ),
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.email,
-                        color: Colors.black,
-                      ),
-                      title: Text(
-                        "aikanshtiwari007@gmail.com",
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    color: Color.fromARGB(255, 197, 179, 179),
-                    margin: EdgeInsets.symmetric(
-                      vertical: 10.0,
-                      horizontal: 25.0,
-                    ),
-                    child: ListTile(
-                      leading: Image.asset("assets/Images/icons8-phone-50.png"),
-                      title: Text(
-                        "+91 6387175488",
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    color: Color.fromARGB(255, 197, 179, 179),
-                    margin: EdgeInsets.symmetric(
-                      vertical: 10.0,
-                      horizontal: 25.0,
-                    ),
-                    child: ListTile(
-                      leading:
-                          Image.asset("assets/Images/icons8-linkedin-48.png"),
-                      title: Text(
-                        "Aikansh Tiwari",
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    color: Color.fromARGB(255, 197, 179, 179),
-                    margin: EdgeInsets.symmetric(
-                      vertical: 10.0,
-                      horizontal: 25.0,
-                    ),
-                    child: ListTile(
-                      leading:
-                          Image.asset("assets/Images/icons8-instagram-50.png"),
-                      title: Text(
-                        "aikansh_tiwari13",
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
+                 
                 ]),
           ),
         ));

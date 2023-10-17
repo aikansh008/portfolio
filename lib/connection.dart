@@ -36,7 +36,7 @@ class MyConnections extends StatelessWidget {
                     child: Text("Connect With Me",textAlign:TextAlign.center,style: TextStyle(
                       fontSize: 40,
                       fontWeight:FontWeight.w800,
-                      color: Colors.white,
+                      color:  const Color.fromARGB(255, 245, 16, 0),
                     ),),
                   ),
                Padding(
@@ -46,7 +46,10 @@ class MyConnections extends StatelessWidget {
                   width:200,
                    child: ElevatedButton.icon(onPressed: (){},
                     icon:Icon(Icons.mail),
-                     label: Text("E-Mail")
+                     label: Text("E-Mail",style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                     ))
                      )
                  ),
                ),
@@ -57,7 +60,10 @@ class MyConnections extends StatelessWidget {
                     width:200,
                      child: ElevatedButton.icon(onPressed: (){},
                       icon:Icon(Icons.link),
-                       label: Text("Git")
+                       label: Text("Git",style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                     ))
                        )
                    ),
                 ),
@@ -66,9 +72,13 @@ class MyConnections extends StatelessWidget {
                   child: SizedBox(
                     height: 100,
                     width:200,
-                     child: ElevatedButton.icon(onPressed: (){},
+                     child: ElevatedButton.icon(onPressed: (){
+                     },
                       icon:Icon(Icons.link),
-                       label: Text("LinkedIn")
+                       label: Text("LinkedIn",style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                     ))
                        )
                    ),
                 ),
@@ -79,7 +89,10 @@ class MyConnections extends StatelessWidget {
                     width:200,
                      child: ElevatedButton.icon(onPressed: (){},
                       icon:Icon(Icons.lightbulb),
-                       label: Text("Instagram")
+                       label: Text("Instagram",style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                     ),)
                        )
                    ),
                 ),
@@ -90,7 +103,10 @@ class MyConnections extends StatelessWidget {
                     width:200,
                      child: ElevatedButton.icon(onPressed: (){},
                       icon:Icon(Icons.account_circle_outlined),
-                       label: Text("Contact")
+                       label: Text("Contact",style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                     ),)
                        )
                    ),
                 ),
